@@ -5,35 +5,35 @@ from selenium.webdriver.support.ui import Select
 import time
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
-import phantomjs
 
 
+# =========================== Change Variables below for personalization ==========================
 
 # Declare variables
 url = "https://shop.countdown.co.nz/shop/productdetails?stockcode=279224&name=irvines-chilled-pie-6pk-mince-cheese"
 phoneNum = "0273102660"
-sendMessage = True   # Set to False if you dont want the iMessage to be sent
+sendMessage = False   # Set to False if you don't want the iMessage to be sent
 productPriceGoal = 6.0   #Sets the price goal of the product for the applescript generator
-selectedStore = "Countdown Cambridge"
+selectedStore = "Countdown Cambridge".strip()
 
 
 
 
-
+# Scripts required for seamless iMessage sending
 changeMacSelectedAppScript = """if application "Safari" is running then
     tell application "Safari"
         activate
     end tell
     end if"""
-
 quitMessagesScript = """tell application "Messages"
     quit
 end tell"""
 
 
+
 # Change browser to headless
 options = Options()
-options.headless = True
+#options.headless = True
 
 # Disable images for faster testing
 chrome_prefs = {}
@@ -41,15 +41,18 @@ chrome_prefs["profile.default_content_settings"] = {"images": 2}
 chrome_prefs["profile.managed_default_content_settings"] = {"images": 2}
 options.experimental_options["prefs"] = chrome_prefs
 
+
 # Initiate web driver
 browser = webdriver.Chrome(ChromeDriverManager().install(), options=options)
 browser.get(url)
 
-# Sends a script to AppleScript to send an iMessage to my email.
+
+# Sends a script to AppleScript to send an iMessage to the selected phone number.
 def script_run(script, changeOpenApp, closeMessages):
     applescript.run(changeOpenApp)
     applescript.run(script)
     applescript.run(closeMessages)
+
 
 # Function to return the script depending on the price of product
 def setScript(priceOfPie):
@@ -72,13 +75,15 @@ def setScript(priceOfPie):
 # This function uses selenium to change the location of the store to your preferred store.
 # You will need to check the website and make sure you enter the store name correctly at the top of this program
 def checkLocation(browser):
-    # If store name isnt cambridge, change it
+    time.sleep(2)
+    # If store name isn't cambridge, change it
     if(browser.find_element_by_tag_name("fulfilment-bar > span > span > strong").text.strip() != selectedStore):
         changeStore = browser.find_element_by_css_selector("fulfilment-bar > span > a")
         changeStore.click()
 
         # Change shopping method (pickup is easiest for setting region
-        browser.find_element_by_xpath("//input[@id='method-pickup']").click()
+        # browser.find_element_by_xpath("//input[@id='method-pickup']").click()
+        browser.find_element_by_id("method-pickup").click()
 
         # Change store buttons in  "book a timeslot" page
         browser.find_element_by_tag_name("fulfilment-method-selection + fieldset > p > button").click()
@@ -86,19 +91,25 @@ def checkLocation(browser):
         time.sleep(2)
 
         # Click select region button
-        # selectRegion = browser.find_element_by_tag_name("#area-dropdown-2 + select")
+        # Waikato is the 9th item in the list of regions
         selectRegion = Select(browser.find_element_by_tag_name("form-dropdown > div > select"))
         selectRegion.select_by_index(9)
 
         # Find store name
-        #storeName = browser.find_elements_by_xpath("//fulfilment-address-selector/ul/li[1]/button/i/strong")
-        browser.find_element_by_css_selector("fulfilment-address-selector > ul > li:nth-child(2) > button").click()
+        # Selects the second element of the list (Corresponds to Countdown Cambridge, for example)
+        # browser.find_element_by_css_selector("fulfilment-address-selector > ul > li:nth-child(2) > button").click()
+        # This line finds the element based on its ID, which is below for Countdown Cambridge
+        # browser.find_element_by_id("address-selection-button--1332617").click()
+        # browser.find_element_by_xpath("//button//strong[text()='"+selectedStore+"']").click()
+        browser.find_element_by_xpath("//button//strong[contains(.,'" + selectedStore + "')]").click()
+        #strongElement.find_element_by_xpath("..").click()
 
-        # Go back to pie page - Click back arrow 3 times
+
+        # Go back to pie page - Click back arrow 2 times
         browser.back()
         browser.back()
     else:
-        print("Already in "+selectedStore+ " store")
+        print("Already in " + selectedStore + " store")
 
 
 checkLocation(browser)
