@@ -14,7 +14,8 @@ url = "https://shop.countdown.co.nz/shop/productdetails?stockcode=279224&name=ir
 phoneNum = "0273102660"
 sendMessage = False   # Set to False if you don't want the iMessage to be sent
 productPriceGoal = 6.0   #Sets the price goal of the product for the applescript generator
-selectedStore = "Countdown Cambridge".strip()
+selectedStore = "Countdown Cambridge".strip()    # Sets town/city of store. Can be just the town/city name
+selectedRegion = "Waikato".capitalize()    # Sets the region of the store. Ensure this is correct otherwise program will not work
 
 
 
@@ -93,17 +94,18 @@ def checkLocation(browser):
         # Click select region button
         # Waikato is the 9th item in the list of regions
         selectRegion = Select(browser.find_element_by_tag_name("form-dropdown > div > select"))
-        selectRegion.select_by_index(9)
+        # Ensures selected region is correct. Program closes if not.
+        try:
+            selectRegion.select_by_visible_text(selectedRegion)
+        except:
+            print("Couldn't find region! Check your spelling and try again")
+            return
 
         # Find store name
         # Selects the second element of the list (Corresponds to Countdown Cambridge, for example)
         # browser.find_element_by_css_selector("fulfilment-address-selector > ul > li:nth-child(2) > button").click()
-        # This line finds the element based on its ID, which is below for Countdown Cambridge
         # browser.find_element_by_id("address-selection-button--1332617").click()
-        # browser.find_element_by_xpath("//button//strong[text()='"+selectedStore+"']").click()
         browser.find_element_by_xpath("//button//strong[contains(.,'" + selectedStore + "')]").click()
-        #strongElement.find_element_by_xpath("..").click()
-
 
         # Go back to pie page - Click back arrow 2 times
         browser.back()
