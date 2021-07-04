@@ -13,7 +13,7 @@ from selenium.webdriver.chrome.options import Options
 url = "https://shop.countdown.co.nz/shop/productdetails?stockcode=279224&name=irvines-chilled-pie-6pk-mince-cheese"
 phoneNum = "0273102660"
 sendMessage = False   # Set to False if you don't want the iMessage to be sent
-productPriceGoal = 6.0   #Sets the price goal of the product for the applescript generator
+productPriceGoal = 6.00   #Sets the price goal of the product for the applescript generator
 selectedStore = "Countdown Cambridge".strip()    # Sets town/city of store. Can be just the town/city name
 selectedRegion = "Waikato".capitalize()    # Sets the region of the store. Ensure this is correct otherwise program will not work
 
@@ -34,7 +34,7 @@ end tell"""
 
 # Change browser to headless
 options = Options()
-#options.headless = True
+options.headless = True
 
 # Disable images for faster testing
 chrome_prefs = {}
@@ -47,6 +47,14 @@ options.experimental_options["prefs"] = chrome_prefs
 browser = webdriver.Chrome(ChromeDriverManager().install(), options=options)
 browser.get(url)
 
+# Run scripts to send iMessage to number
+def shouldRun(sendMessage):
+    if(sendMessage):
+        script = setScript(priceOfPie)
+        script_run(script, changeMacSelectedAppScript, quitMessagesScript)
+    else:
+        print("Message sending was disabled")
+
 
 # Sends a script to AppleScript to send an iMessage to the selected phone number.
 def script_run(script, changeOpenApp, closeMessages):
@@ -57,14 +65,14 @@ def script_run(script, changeOpenApp, closeMessages):
 
 # Function to return the script depending on the price of product
 def setScript(priceOfPie):
-    if(priceOfPie <= 6.00):
+    if(priceOfPie <= productPriceGoal):
         script = """tell application "Messages"
             set myid to get id of first service
             set theBuddy to buddy \"""" + phoneNum + """\" of service id myid
             send """ + "\"Go buy a mince and cheese pie! They're only: $" + str(priceOfPie) + "\"" + """ to theBuddy
         end tell"""
 
-    elif(priceOfPie > 6.00):
+    elif(priceOfPie > productPriceGoal):
         script = """tell application "Messages"
             set myid to get id of first service
             set theBuddy to buddy "greenwood.maysen@gmail.com" of service id myid
@@ -73,62 +81,55 @@ def setScript(priceOfPie):
 
     return script
 
+
 # This function uses selenium to change the location of the store to your preferred store.
-# You will need to check the website and make sure you enter the store name correctly at the top of this program
+# You will need to enter the region and town/city correctly at the top of this program
 def checkLocation(browser):
     time.sleep(2)
-    # If store name isn't cambridge, change it
+    # If store name isn't the selected store, change it
     if(browser.find_element_by_tag_name("fulfilment-bar > span > span > strong").text.strip() != selectedStore):
-        changeStore = browser.find_element_by_css_selector("fulfilment-bar > span > a")
-        changeStore.click()
-
-        # Change shopping method (pickup is easiest for setting region
-        # browser.find_element_by_xpath("//input[@id='method-pickup']").click()
-        browser.find_element_by_id("method-pickup").click()
-
-        # Change store buttons in  "book a timeslot" page
-        browser.find_element_by_tag_name("fulfilment-method-selection + fieldset > p > button").click()
-
-        time.sleep(2)
-
-        # Click select region button
-        # Waikato is the 9th item in the list of regions
-        selectRegion = Select(browser.find_element_by_tag_name("form-dropdown > div > select"))
-        # Ensures selected region is correct. Program closes if not.
         try:
+            changeStore = browser.find_element_by_css_selector("fulfilment-bar > span > a")
+            changeStore.click()
+
+            # Change shopping method (pickup is easiest for setting region
+            browser.find_element_by_id("method-pickup").click()
+
+            # Change store buttons in  "book a timeslot" page
+            browser.find_element_by_tag_name("fulfilment-method-selection + fieldset > p > button").click()
+
+            time.sleep(2)
+
+            # Click select region button
+            selectRegion = Select(browser.find_element_by_tag_name("form-dropdown > div > select"))
             selectRegion.select_by_visible_text(selectedRegion)
+
+            # Find store name
+            # Selects the second element of the list (Corresponds to Countdown Cambridge, for example)
+            browser.find_element_by_xpath("//button//strong[contains(.,'" + selectedStore + "')]").click()
+
+            # Go back to pie page - Click back arrow 2 times
+            browser.back()
+            browser.back()
         except:
-            print("Couldn't find region! Check your spelling and try again")
-            return
-
-        # Find store name
-        # Selects the second element of the list (Corresponds to Countdown Cambridge, for example)
-        # browser.find_element_by_css_selector("fulfilment-address-selector > ul > li:nth-child(2) > button").click()
-        # browser.find_element_by_id("address-selection-button--1332617").click()
-        browser.find_element_by_xpath("//button//strong[contains(.,'" + selectedStore + "')]").click()
-
-        # Go back to pie page - Click back arrow 2 times
-        browser.back()
-        browser.back()
+            # If any error occurs from above, terminates the program. This happens sometimes with slow website speeds
+            print("An unexpected error occured! Try run the program again.")
+            browser.quit()
+            return False
     else:
         print("Already in " + selectedStore + " store")
 
 
-checkLocation(browser)
-time.sleep(1)
+if(not(checkLocation(browser))):
+    time.sleep(1)
+    # Set price to what's found on website
+    mainPriceDom = browser.find_element_by_tag_name("em")
+    centPriceDom = browser.find_element_by_css_selector("em + span")
 
-# Set price to what's found on website
-mainPriceDom = browser.find_element_by_tag_name("em")
-centPriceDom = browser.find_element_by_css_selector("em + span")
+    priceOfPie = float(mainPriceDom.text+"."+centPriceDom.text.strip())
+    print("Found price of mince and cheese pies! They're $"+str(priceOfPie))
+    browser.quit()
 
-priceOfPie = float(mainPriceDom.text+"."+centPriceDom.text.strip())
-print("Found price of mince and cheese pies! They're $"+str(priceOfPie))
-browser.quit()
 
-# Run scripts to send iMessage to myself
-def shouldRun(sendMessage):
-    if(sendMessage):
-        script = setScript(priceOfPie)
-        script_run(script, changeMacSelectedAppScript, quitMessagesScript)
-    else:
-        print("Message sending was disabled")
+# Checks if message sending is enabled by user, if it is, sends a message to the selected number
+shouldRun(sendMessage)
