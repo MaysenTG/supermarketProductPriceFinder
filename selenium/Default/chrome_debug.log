@@ -1,0 +1,91 @@
+[0623/225344.535179:ERROR:file_io.cc(91)] ReadExactly: expected 8, observed 0
+[0623/225344.536564:ERROR:xattr.cc(63)] setxattr org.chromium.crashpad.database.initialized on file /var/folders/yc/6q81lv2j56j6df0_18_srj500000gn/T/: Operation not permitted (1)
+[0623/225347.872378:INFO:CONSOLE(3)] "Hotjar not launching due to suspicious userAgent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/91.0.4472.114 Safari/537.36", source: https://static.hotjar.com/c/hotjar-1963028.js?sv=7 (3)
+[0623/225348.517476:INFO:CONSOLE(2)] "Commission Factory: container tag loaded for advertiser 70324", source: https://t.cfjump.com/tag/70324 (2)
+[0623/225349.773609:INFO:CONSOLE(3)] "Hotjar not launching due to suspicious userAgent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/91.0.4472.114 Safari/537.36", source: https://static.hotjar.com/c/hotjar-1963028.js?sv=7 (3)
+[0623/225350.735557:INFO:CONSOLE(24)] "[Facebook Pixel] - Duplicate Pixel ID: 718102978753829.", source: https://connect.facebook.net/en_US/fbevents.js (24)
+[0623/225350.735845:INFO:CONSOLE(24)] "[Facebook Pixel] - Duplicate Pixel ID: 432918333966849.", source: https://connect.facebook.net/en_US/fbevents.js (24)
+[0623/230812.194290:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0623/230812.194704:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0623/230812.194899:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0623/230812.195109:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0623/230812.495250:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0623/230812.495590:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0624/095003.775317:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0624/095003.776856:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0624/095003.777070:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0624/095003.777232:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0624/095004.006636:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0624/095004.006907:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0624/233308.918041:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0624/233308.921731:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0624/233308.921924:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0624/233308.922084:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0624/233309.330462:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0624/233309.330678:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0625/145909.441932:WARNING:dns_config_service_posix.cc(192)] Failed to read DnsConfig.
+[0625/145937.369783:INFO:CONSOLE(49)] "Error retrieving login status, fetch cancelled.", source: https://connect.facebook.net/en_US/sdk.js?hash=a2aac45e2f38141fd75dbafe5943bd81 (49)
+[0625/151106.039660:WARNING:dns_config_service_posix.cc(192)] Failed to read DnsConfig.
+[0625/151345.167422:WARNING:dns_config_service_posix.cc(192)] Failed to read DnsConfig.
+[0626/150007.613869:WARNING:dns_config_service_posix.cc(192)] Failed to read DnsConfig.
+[0626/150009.033434:WARNING:dns_config_service_posix.cc(192)] Failed to read DnsConfig.
+[0626/175820.319171:WARNING:dns_config_service_posix.cc(192)] Failed to read DnsConfig.
+[0626/175821.977629:WARNING:dns_config_service_posix.cc(192)] Failed to read DnsConfig.
+[0627/174508.353889:WARNING:dns_config_service_posix.cc(192)] Failed to read DnsConfig.
+[0628/024719.347436:WARNING:dns_config_service_posix.cc(192)] Failed to read DnsConfig.
+[0628/024720.144645:WARNING:dns_config_service_posix.cc(192)] Failed to read DnsConfig.
+[0628/130256.549517:WARNING:dns_config_service_posix.cc(192)] Failed to read DnsConfig.
+[0628/130258.826332:WARNING:dns_config_service_posix.cc(192)] Failed to read DnsConfig.
+[0628/174435.119553:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0628/174435.127108:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0628/174435.127293:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0628/174435.127454:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0628/233115.259655:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0628/233115.340546:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0628/233115.341890:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0628/233115.342080:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0629/121506.957780:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0629/121506.960763:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0629/121506.960964:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0629/121506.961125:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0630/192505.640845:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0630/192505.645440:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0630/192505.645724:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0630/192505.645890:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0701/000133.277848:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0701/000133.281017:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0701/000133.281196:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0701/000133.281340:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0701/000133.500185:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0701/000133.500415:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0701/035118.636341:WARNING:dns_config_service_posix.cc(192)] Failed to read DnsConfig.
+[0701/035119.350266:WARNING:dns_config_service_posix.cc(192)] Failed to read DnsConfig.
+[0701/191608.499796:WARNING:dns_config_service_posix.cc(192)] Failed to read DnsConfig.
+[0701/232420.256847:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0701/232420.259181:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0701/232420.259342:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0701/232420.259508:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0702/150957.100291:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0702/150957.102902:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0702/150957.103146:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0702/150957.103306:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0702/150957.512298:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0702/150957.512541:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0702/215841.848253:WARNING:dns_config_service_posix.cc(192)] Failed to read DnsConfig.
+[0702/215844.393195:WARNING:dns_config_service_posix.cc(192)] Failed to read DnsConfig.
+[0702/223536.540710:WARNING:dns_config_service_posix.cc(192)] Failed to read DnsConfig.
+[0702/223538.197966:WARNING:dns_config_service_posix.cc(192)] Failed to read DnsConfig.
+[0702/235934.350981:WARNING:dns_config_service_posix.cc(192)] Failed to read DnsConfig.
+[0702/235935.706059:WARNING:dns_config_service_posix.cc(192)] Failed to read DnsConfig.
+[0703/000649.627172:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0703/000649.628596:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0703/000649.628797:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0703/000649.628961:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0703/191515.749594:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0703/191515.752936:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0703/191515.753231:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0703/191515.753430:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0704/133756.761834:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0704/133756.765053:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0704/133756.765336:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0704/133756.765511:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
