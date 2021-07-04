@@ -1,0 +1,91 @@
+[INFO  - 2021-06-23T10:40:58.009Z] GhostDriver - Main - running on port 63412
+[INFO  - 2021-06-23T10:40:58.091Z] Session [7ebd3860-d40f-11eb-87c4-b13c9b8bfde1] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":false,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2021-06-23T10:40:58.091Z] Session [7ebd3860-d40f-11eb-87c4-b13c9b8bfde1] - page.customHeaders:  - {}
+[INFO  - 2021-06-23T10:40:58.091Z] Session [7ebd3860-d40f-11eb-87c4-b13c9b8bfde1] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"mac-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2021-06-23T10:40:58.091Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 7ebd3860-d40f-11eb-87c4-b13c9b8bfde1
+[ERROR - 2021-06-23T10:41:01.761Z] Session [7ebd3860-d40f-11eb-87c4-b13c9b8bfde1] - page.onError - msg: TypeError: Attempting to configurable attribute of unconfigurable property.
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2021-06-23T10:41:01.762Z] Session [7ebd3860-d40f-11eb-87c4-b13c9b8bfde1] - page.onError - stack:
+  defineProperty (https://static.countdown.co.nz/assets/apps/2.0.78794/pluto/polyfills-es5.js:1)
+  t (https://static.countdown.co.nz/assets/apps/2.0.78794/pluto/polyfills-es5.js:1)
+  e (https://static.countdown.co.nz/assets/apps/2.0.78794/pluto/polyfills-es5.js:1)
+  (anonymous function) (https://static.countdown.co.nz/assets/apps/2.0.78794/pluto/polyfills-es5.js:1)
+  B (https://static.countdown.co.nz/assets/apps/2.0.78794/pluto/polyfills-es5.js:1)
+  (anonymous function) (https://static.countdown.co.nz/assets/apps/2.0.78794/pluto/polyfills-es5.js:1)
+  t (https://static.countdown.co.nz/assets/apps/2.0.78794/pluto/polyfills-es5.js:1)
+  z (https://static.countdown.co.nz/assets/apps/2.0.78794/pluto/polyfills-es5.js:1)
+  q (https://static.countdown.co.nz/assets/apps/2.0.78794/pluto/polyfills-es5.js:1)
+  K (https://static.countdown.co.nz/assets/apps/2.0.78794/pluto/polyfills-es5.js:1)
+  Q (https://static.countdown.co.nz/assets/apps/2.0.78794/pluto/polyfills-es5.js:1)
+  at (https://static.countdown.co.nz/assets/apps/2.0.78794/pluto/polyfills-es5.js:1)
+  (anonymous function) (https://static.countdown.co.nz/assets/apps/2.0.78794/pluto/polyfills-es5.js:1)
+  UGdZ (https://static.countdown.co.nz/assets/apps/2.0.78794/pluto/polyfills-es5.js:1)
+  i (https://static.countdown.co.nz/assets/apps/2.0.78794/pluto/runtime-es5.js:1)
+  hN/g (https://static.countdown.co.nz/assets/apps/2.0.78794/pluto/polyfills-es5.js:1)
+  i (https://static.countdown.co.nz/assets/apps/2.0.78794/pluto/runtime-es5.js:1)
+  (anonymous function) (https://static.countdown.co.nz/assets/apps/2.0.78794/pluto/polyfills-es5.js:1)
+  i (https://static.countdown.co.nz/assets/apps/2.0.78794/pluto/runtime-es5.js:1)
+  t (https://static.countdown.co.nz/assets/apps/2.0.78794/pluto/runtime-es5.js:1)
+  r (https://static.countdown.co.nz/assets/apps/2.0.78794/pluto/runtime-es5.js:1)
+  (anonymous function) (https://static.countdown.co.nz/assets/apps/2.0.78794/pluto/polyfills-es5.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2021-06-23T10:41:01.918Z] Session [7ebd3860-d40f-11eb-87c4-b13c9b8bfde1] - page.onError - msg: TypeError: Attempting to configurable attribute of unconfigurable property.
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2021-06-23T10:41:01.918Z] Session [7ebd3860-d40f-11eb-87c4-b13c9b8bfde1] - page.onError - stack:
+  defineProperty (https://static.countdown.co.nz/assets/apps/2.0.78794/pluto/polyfills-es5.js:1)
+  t (https://static.countdown.co.nz/assets/apps/2.0.78794/pluto/polyfills-es5.js:1)
+  e (https://static.countdown.co.nz/assets/apps/2.0.78794/pluto/polyfills-es5.js:1)
+  (anonymous function) (https://static.countdown.co.nz/assets/apps/2.0.78794/pluto/polyfills-es5.js:1)
+  B (https://static.countdown.co.nz/assets/apps/2.0.78794/pluto/polyfills-es5.js:1)
+  U (https://static.countdown.co.nz/assets/apps/2.0.78794/pluto/polyfills-es5.js:1)
+  createElement (https://static.countdown.co.nz/assets/apps/2.0.78794/pluto/polyfills-es5.js:1)
+  (anonymous function) (https://code.jquery.com/jquery-1.12.4.min.js:2)
+  i (https://code.jquery.com/jquery-1.12.4.min.js:2)
+  fireWith (https://code.jquery.com/jquery-1.12.4.min.js:2)
+  ready (https://code.jquery.com/jquery-1.12.4.min.js:2)
+  K (https://code.jquery.com/jquery-1.12.4.min.js:2)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2021-06-23T10:41:01.935Z] Session [7ebd3860-d40f-11eb-87c4-b13c9b8bfde1] - page.onError - msg: %c %c[error]   error bootstrapping sdk [object Object]
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2021-06-23T10:41:01.935Z] Session [7ebd3860-d40f-11eb-87c4-b13c9b8bfde1] - page.onError - stack:
+  error (:0)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2021-06-23T10:41:03.488Z] Session [7ebd3860-d40f-11eb-87c4-b13c9b8bfde1] - page.onError - msg: TypeError: Attempting to configurable attribute of unconfigurable property.
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2021-06-23T10:41:03.488Z] Session [7ebd3860-d40f-11eb-87c4-b13c9b8bfde1] - page.onError - stack:
+  defineProperty (https://static.countdown.co.nz/assets/apps/2.0.78794/pluto/polyfills-es5.js:1)
+  t (https://static.countdown.co.nz/assets/apps/2.0.78794/pluto/polyfills-es5.js:1)
+  e (https://static.countdown.co.nz/assets/apps/2.0.78794/pluto/polyfills-es5.js:1)
+  (anonymous function) (https://static.countdown.co.nz/assets/apps/2.0.78794/pluto/polyfills-es5.js:1)
+  B (https://static.countdown.co.nz/assets/apps/2.0.78794/pluto/polyfills-es5.js:1)
+  U (https://static.countdown.co.nz/assets/apps/2.0.78794/pluto/polyfills-es5.js:1)
+  createElement (https://static.countdown.co.nz/assets/apps/2.0.78794/pluto/polyfills-es5.js:1)
+  kampyleInit (https://nebula-cdn.kampyle.com/wau/68809/onsite/embed.js:2)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2021-06-23T10:41:03.489Z] Session [7ebd3860-d40f-11eb-87c4-b13c9b8bfde1] - page.onError - msg: TypeError: Attempting to configurable attribute of unconfigurable property.
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2021-06-23T10:41:03.489Z] Session [7ebd3860-d40f-11eb-87c4-b13c9b8bfde1] - page.onError - stack:
+  defineProperty (https://static.countdown.co.nz/assets/apps/2.0.78794/pluto/polyfills-es5.js:1)
+  t (https://static.countdown.co.nz/assets/apps/2.0.78794/pluto/polyfills-es5.js:1)
+  e (https://static.countdown.co.nz/assets/apps/2.0.78794/pluto/polyfills-es5.js:1)
+  (anonymous function) (https://static.countdown.co.nz/assets/apps/2.0.78794/pluto/polyfills-es5.js:1)
+  B (https://static.countdown.co.nz/assets/apps/2.0.78794/pluto/polyfills-es5.js:1)
+  U (https://static.countdown.co.nz/assets/apps/2.0.78794/pluto/polyfills-es5.js:1)
+  createElement (https://static.countdown.co.nz/assets/apps/2.0.78794/pluto/polyfills-es5.js:1)
+  Bh (https://www.googletagmanager.com/gtm.js?id=GTM-WS64RR&gtm_auth=ACATlXXZuGanNzAqpLMacA&gtm_preview=env-2&gtm_cookies_win=x:3340)
+  nt (https://www.googletagmanager.com/gtm.js?id=GTM-WS64RR&gtm_auth=ACATlXXZuGanNzAqpLMacA&gtm_preview=env-2&gtm_cookies_win=x:3483)
+  (anonymous function) (https://www.googletagmanager.com/gtm.js?id=GTM-WS64RR&gtm_auth=ACATlXXZuGanNzAqpLMacA&gtm_preview=env-2&gtm_cookies_win=x:3558)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2021-06-23T10:41:03.792Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1624444863751
+
+  phantomjs://platform/console++.js:263 in error
