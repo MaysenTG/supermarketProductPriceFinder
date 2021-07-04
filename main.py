@@ -12,6 +12,14 @@ import phantomjs
 # Declare variables
 url = "https://shop.countdown.co.nz/shop/productdetails?stockcode=279224&name=irvines-chilled-pie-6pk-mince-cheese"
 phoneNum = "0273102660"
+sendMessage = True   # Set to False if you dont want the iMessage to be sent
+productPriceGoal = 6.0   #Sets the price goal of the product for the applescript generator
+selectedStore = "Countdown Cambridge"
+
+
+
+
+
 changeMacSelectedAppScript = """if application "Safari" is running then
     tell application "Safari"
         activate
@@ -21,6 +29,7 @@ changeMacSelectedAppScript = """if application "Safari" is running then
 quitMessagesScript = """tell application "Messages"
     quit
 end tell"""
+
 
 # Change browser to headless
 options = Options()
@@ -32,7 +41,7 @@ chrome_prefs["profile.default_content_settings"] = {"images": 2}
 chrome_prefs["profile.managed_default_content_settings"] = {"images": 2}
 options.experimental_options["prefs"] = chrome_prefs
 
-
+# Initiate web driver
 browser = webdriver.Chrome(ChromeDriverManager().install(), options=options)
 browser.get(url)
 
@@ -42,6 +51,7 @@ def script_run(script, changeOpenApp, closeMessages):
     applescript.run(script)
     applescript.run(closeMessages)
 
+# Function to return the script depending on the price of product
 def setScript(priceOfPie):
     if(priceOfPie <= 6.00):
         script = """tell application "Messages"
@@ -59,10 +69,11 @@ def setScript(priceOfPie):
 
     return script
 
+# This function uses selenium to change the location of the store to your preferred store.
+# You will need to check the website and make sure you enter the store name correctly at the top of this program
 def checkLocation(browser):
     # If store name isnt cambridge, change it
-
-    if(browser.find_element_by_tag_name("fulfilment-bar > span > span > strong").text.strip() != "Countdown Cambridge"):
+    if(browser.find_element_by_tag_name("fulfilment-bar > span > span > strong").text.strip() != selectedStore):
         changeStore = browser.find_element_by_css_selector("fulfilment-bar > span > a")
         changeStore.click()
 
@@ -87,11 +98,11 @@ def checkLocation(browser):
         browser.back()
         browser.back()
     else:
-        print("Already in cambridge store!!")
+        print("Already in "+selectedStore+ " store")
 
 
 checkLocation(browser)
-time.sleep(2)
+time.sleep(1)
 
 # Set price to what's found on website
 mainPriceDom = browser.find_element_by_tag_name("em")
@@ -102,5 +113,9 @@ print("Found price of mince and cheese pies! They're $"+str(priceOfPie))
 browser.quit()
 
 # Run scripts to send iMessage to myself
-script = setScript(priceOfPie)
-script_run(script, changeMacSelectedAppScript, quitMessagesScript)
+def shouldRun(sendMessage):
+    if(sendMessage):
+        script = setScript(priceOfPie)
+        script_run(script, changeMacSelectedAppScript, quitMessagesScript)
+    else:
+        print("Message sending was disabled")
