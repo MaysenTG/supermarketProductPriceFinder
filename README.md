@@ -3,7 +3,7 @@ This python application scrapes the Countdown Supermarket online shopping page u
 The chosen WebDriver for Selenium Google Chrome running in headless and imageless mode for the fastest performance
 
 
-#To use this application:
+## To use this application:
 
 
 1. Open the program along with its subfolders/files in your preferred IDE (I'm using PyCharm)
