@@ -89,3 +89,22 @@
 [0704/133756.765053:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
 [0704/133756.765336:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
 [0704/133756.765511:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0705/005603.117824:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0705/005603.154409:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0705/005603.154643:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0705/005603.154799:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0705/011606.172119:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0705/011606.181038:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0705/011606.181821:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0705/011606.182276:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0705/021725.336994:WARNING:dns_config_service_posix.cc(192)] Failed to read DnsConfig.
+[0705/111720.095600:WARNING:dns_config_service_posix.cc(192)] Failed to read DnsConfig.
+[0705/111720.607919:WARNING:dns_config_service_posix.cc(192)] Failed to read DnsConfig.
+[0706/010419.302961:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0706/010419.339762:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0706/010419.341937:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0706/010419.342118:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0706/175031.660174:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0706/175031.669477:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0706/175031.669688:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670
+[0706/175031.669896:ERROR:display_link_mac.cc(85)] CVDisplayLinkCreateWithActiveCGDisplays failed: -6670

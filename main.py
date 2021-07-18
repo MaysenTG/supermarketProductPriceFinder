@@ -17,6 +17,8 @@ productPriceGoal = 6.00   #Sets the price goal of the product for the applescrip
 selectedStore = "Countdown Cambridge".strip()    # Sets town/city of store. Can be just the town/city name
 selectedRegion = "Waikato".capitalize()    # Sets the region of the store. Ensure this is correct otherwise program will not work
 
+# =================================================================================================
+
 
 
 
@@ -121,15 +123,19 @@ def checkLocation(browser):
 
 
 if(not(checkLocation(browser))):
-    time.sleep(1)
+    time.sleep(2)
     # Set price to what's found on website
-    mainPriceDom = browser.find_element_by_tag_name("em")
-    centPriceDom = browser.find_element_by_css_selector("em + span")
+    try:
+        mainPriceDom = browser.find_element_by_tag_name("em")
+        centPriceDom = browser.find_element_by_css_selector("em + span")
+        priceOfPie = float(mainPriceDom.text + "." + centPriceDom.text.strip())
+        print("Found price of mince and cheese pies! They're $" + str(priceOfPie))
+        # Checks if message sending is enabled by user, if it is, sends a message to the selected number
+        shouldRun(sendMessage)
 
-    priceOfPie = float(mainPriceDom.text+"."+centPriceDom.text.strip())
-    print("Found price of mince and cheese pies! They're $"+str(priceOfPie))
+    except:
+        print("Product not available in this store!")
+        print("This may be because the product is out of stock or not available at all")
+        print("Select another store and try again")
+
     browser.quit()
-
-
-# Checks if message sending is enabled by user, if it is, sends a message to the selected number
-shouldRun(sendMessage)
