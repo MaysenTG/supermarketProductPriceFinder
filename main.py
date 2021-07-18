@@ -3,8 +3,8 @@ import applescript as applescript
 from selenium import webdriver
 from selenium.webdriver.support.ui import Select
 import time
-from webdriver_manager.chrome import ChromeDriverManager
-from selenium.webdriver.chrome.options import Options
+import webdriver_manager.chrome
+import selenium.webdriver.chrome.options
 
 
 # =========================== Change Variables below for personalization ==========================
@@ -34,7 +34,7 @@ end tell"""
 
 
 # Change browser to headless
-options = Options()
+options = selenium.webdriver.chrome.options.Options()
 options.headless = True
 
 # Disable images for faster testing
@@ -45,7 +45,7 @@ options.experimental_options["prefs"] = chrome_prefs
 
 
 # Initiate web driver
-browser = webdriver.Chrome(ChromeDriverManager().install(), options=options)
+browser = webdriver.Chrome(webdriver_manager.chrome.ChromeDriverManager().install(), options=options)
 browser.get(url)
 
 # Run scripts to send iMessage to number
