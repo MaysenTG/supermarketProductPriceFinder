@@ -33,7 +33,6 @@ quitMessagesScript = """tell application "Messages"
 end tell"""
 
 
-
 # Change browser to headless
 options = Options()
 options.headless = True
