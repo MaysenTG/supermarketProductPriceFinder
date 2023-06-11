@@ -10,7 +10,7 @@ from selenium.webdriver.chrome.options import Options
 
 # Declare variables
 url = "https://shop.countdown.co.nz/shop/productdetails?stockcode=279224&name=irvines-chilled-pie-6pk-mince-cheese"
-phoneNum = "0273102660"
+phoneNum = "123456789"
 sendMessage = False   # Set to False if you don't want the iMessage to be sent
 productPriceGoal = 6.00   #Sets the price goal of the product for the applescript generator
 selectedStore = "Countdown Cambridge".strip()    # Sets town/city of store. Can be just the town/city name
