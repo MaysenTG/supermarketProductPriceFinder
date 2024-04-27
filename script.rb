@@ -17,8 +17,8 @@ Dotenv.load
 # =================================Variables====================================
 GMAIL_USERNAME=ENV['GMAIL_USERNAME'] # Sets the from and to email address
 GMAIL_PASSWORD=ENV['GMAIL_PASSWORD'] # Sets the password for the email
-
-PRICE_GOAL = 6.00   #Sets the price goal for the product
+PRODUCT_STOCK_CODE=148886 #Sets the product stock code for the product
+PRICE_GOAL = 8.50   #Sets the price goal for the product
 
 # =============================================================================
 
@@ -43,6 +43,8 @@ class PiePriceMailer < ActionMailer::Base
 
   def pie_price(pie_price)
     @pie_price = pie_price
+    @price_goal = PRICE_GOAL
+    @product_stock_code = PRODUCT_STOCK_CODE
     mail(to: GMAIL_USERNAME, subject: 'Countdown Mince and Cheese pie price') do |format|
       format.html { render plain: ERB.new(File.read('pie_price.erb')).result(binding) }
     end
@@ -50,7 +52,6 @@ class PiePriceMailer < ActionMailer::Base
 end
 
 class PiePriceClient
-  PRODUCT_STOCK_CODE = 148886
   include HTTParty
 
   base_uri 'https://www.countdown.co.nz/api/v1/products'

@@ -5,7 +5,7 @@ on:
     branches-ignore:
       - master
   schedule:
-    - cron: '*/15 * * * *'
+    - cron: '30 9 * * 1'
 
 jobs:
   run:
