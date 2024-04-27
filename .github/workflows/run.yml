@@ -18,7 +18,7 @@ jobs:
         with:
           ruby-version: 3.2.0
 
-      - name: Cache gems
+      - name: Ruby gem cache
         uses: actions/cache@v3
         with:
           path: vendor/bundle
@@ -26,9 +26,13 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gems-
 
-      - name: Install dependencies
+      - name: Install system libs
         run: |
-          bundle config path vendor/bundle
+          gem install bundler -v 2.4.19
+      - name: Install gems
+        run: |
+          bundle config set --local frozen 'true'
+          bundle config set --local path 'vendor/bundle'
           bundle install --jobs 4 --retry 3
 
       - name: Run tests
