@@ -1,8 +1,11 @@
-require 'action_mailer'
+require 'bundler/setup'
+# Bundler.require(:default)
+
 require 'yaml'
 require 'erb'
 require 'httparty'
 require 'dotenv'
+require 'action_mailer'
 
 
 # ==========================Supermarket price finder============================

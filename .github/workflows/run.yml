@@ -1,6 +1,9 @@
 name: Run ruby script
 
 on:
+  push:
+    branches-ignore:
+      - master
   schedule:
     - cron: '*/15 * * * *'
 
@@ -9,13 +12,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Set up Ruby 3.2.0
         uses: ruby/setup-ruby@ec02537da5712d66d4d50a0f33b7eb52773b5ed1
         with:
           ruby-version: 3.2.0
-      - name: Install dependencies
-        run: bundle install
-      - name: Run fetch and email script
+
+      - name: Ruby gem cache
+        uses: actions/cache@v3
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
+
+      - name: Install gems
+        run: |
+          bundle config set --local frozen 'true'
+          bundle config set --local path 'vendor/bundle'
+          bundle install --jobs 4 --retry 3
+
+      - name: Run tests
         run: ruby script.rb
         env:
           GMAIL_USERNAME: ${{ secrets.GMAIL_USERNAME }}
