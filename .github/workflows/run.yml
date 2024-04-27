@@ -26,9 +26,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gems-
 
-      - name: Install system libs
-        run: |
-          gem install bundler -v 2.4.19
       - name: Install gems
         run: |
           bundle config set --local frozen 'true'
