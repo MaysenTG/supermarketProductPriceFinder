@@ -1,6 +1,9 @@
 name: Run ruby script
 
 on:
+  push:
+    branches-ignore:
+      - master
   schedule:
     - cron: '*/15 * * * *'
 
