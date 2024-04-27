@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .email-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+        }
+        .email-header {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        .email-body {
+            padding: 20px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="email-header">
+            <h2>Big Ben Mince and Cheese pies (6pk)</h2>
+        </div>
+        <div class="email-body">
+            <p>Hello,</p>
+            <p>This product currently costs: $<%= @pie_price %></p>
+        </div>
+    </div>
+</body>
+</html>
