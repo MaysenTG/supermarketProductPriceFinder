@@ -2,14 +2,14 @@ require 'action_mailer'
 require 'yaml'
 require 'erb'
 require 'httparty'
-require 'money'
 require 'dotenv'
 
-# Load environment variables from .env file
-Dotenv.load
 
 # ==========================Supermarket price finder============================
 
+
+# Load environment variables from .env file
+Dotenv.load
 
 # =================================Variables====================================
 GMAIL_USERNAME=ENV['GMAIL_USERNAME'] # Sets the from and to email address
@@ -23,13 +23,6 @@ PRICE_GOAL = 6.00   #Sets the price goal for the product
 smtp_settings = YAML.load_file('smtp_settings.yml')
 ActionMailer::Base.smtp_settings = smtp_settings.symbolize_keys
 ActionMailer::Base.delivery_method = :smtp
-
-
-require 'action_mailer'
-require 'yaml'
-require 'erb'
-require 'httparty'
-require 'money'
 
 class SMTPSettings
   def self.load
