@@ -1,12 +1,12 @@
 # Supermarket Product Price Finder
-This python application scrapes the Countdown Supermarket online shopping page using Selenium, changes to the appropriate store  location, and then retrieves the price of the product you've linked. In then case of the example, it's a 6pk of mince and cheese pies.
-The chosen WebDriver for Selenium Google Chrome running in headless and imageless mode for the fastest performance
+This ruby script fetches the price of a product on Countdown (Woolsworth now I guess??) every Monday morning and emails me the current price. In this case, the product is a 6pk of mince and cheese pies.
 
 
 ## To use this application:
+1. Clone the repo (`git clone https://github.com/MaysenTG/supermarketProductPriceFinder.git`)
+2. Add your email address to the `.env` file along with a Gmail app password (create one [here](https://myaccount.google.com/apppasswords))
+3. Run `bundle install` to install all required gems
+4. Run the program using `ruby script.rb`
 
-
-1. Open the program along with its subfolders/files in your preferred IDE (I'm using PyCharm)
-2. Run the command: ```pip install -r requirements.txt``` to download all modules
-3. Change all the variables at the top of the program to suit your needs. Make sure the region and town/city are spelt correctly
-3. Run the program
+## Want to change the product?
+Visit your favourite product on Countdown and copy the number from the `stockcode` param in the URL.
