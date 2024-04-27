@@ -1,8 +1,8 @@
-require 'action_mailer'
 require 'yaml'
 require 'erb'
 require 'httparty'
 require 'dotenv'
+require 'action_mailer'
 
 
 # ==========================Supermarket price finder============================
